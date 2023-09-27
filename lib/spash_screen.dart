@@ -2,20 +2,22 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:islami_app/islamy.dart';
+import 'package:islami_app/ui/screens/home.dart';
 
 class splash_screen extends StatefulWidget {
   const splash_screen({Key? key}) : super(key: key);
+  static const String splashRoute="SplashScreen";
 
   @override
   State<splash_screen> createState() => _splash_screenState();
 }
 
 class _splash_screenState extends State<splash_screen> {
+
   @override
   void initState() {
     Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=> islamy()));
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=> HomeScreen()));
     });
     super.initState();
   }
@@ -26,7 +28,7 @@ class _splash_screenState extends State<splash_screen> {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assests/images/splash_background.png"))
+          image: DecorationImage(image: AssetImage("assets/images/splash_background.png"))
         ),
       ),
     );
